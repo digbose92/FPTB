@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap 4 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<link rel="stylesheet" href="form.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+	#name_form {
+display:none;
+}
+  .startButton {
+					display: inline-block;
+					padding: 20px 40px;
+					font-size: 16px;
+					cursor: pointer;
+					text-align: center;
+					text-decoration: none;
+					outline: none;
+					color: #fff;
+					background-color: #4CAF50;
+					border: none;
+					border-radius: 10px;
+				}
+				
+				.startButton:hover {background-color: #3e8e41}
+				
+				.startButton:active {
+					background-color: #3e8e41;		
+					transform: translateY(4px);
+				}
+
+				.pauseButton {
+					display: inline-block;
+					padding: 20px 40px;
+					font-size: 16px;
+					cursor: pointer;
+					text-align: center;
+					text-decoration: none;
+					outline: none;
+					color: #fff;
+					background-color: #4CAF50;
+					border: none;
+					border-radius: 10px;
+				}
+				
+				.pauseButton:hover {background-color: #3e8e41}
+				
+				.pauseButton:active {
+					background-color: #3e8e41;		
+					transform: translateY(4px);
+				}
+
+				.stopButton {
+					display: inline-block;
+					padding: 20px 40px;
+					font-size: 16px;
+					cursor: pointer;
+					text-align: center;
+					text-decoration: none;
+					outline: none;
+					color: #fff;
+					background-color: #4CAF50;
+					border: none;
+					border-radius: 10px;
+				}
+				
+				.stopButton:hover {background-color: #3e8e41}
+				
+				.resetButton:active {
+					background-color: #3e8e41;		
+					transform: translateY(4px);
+				}
+			
+				.resetButton {
+					display: inline-block;
+					padding: 20px 40px;
+					font-size: 16px;
+					cursor: pointer;
+					text-align: center;
+					text-decoration: none;
+					outline: none;
+					color: #fff;
+					background-color: #4CAF50;
+					border: none;
+					border-radius: 10px;
+				}
+				
+				.resetButton:hover {background-color: #3e8e41}
+				
+				.resetButton:active {
+					background-color: #3e8e41;		
+					transform: translateY(4px);
+				}
+.progress {
+  	margin: 10px;
+  	width: 700px;
+		}
+
+.submit_button{
+	background-color: lightblue;
+	border-radius: 4px;
+}
+
+.divstyle {
+  text-align: left;
+  width: 1000px;
+  font-size: 24px;
+  margin-top: 15px;
+
+}
+
+.values {
+	text-align: left;
+	font-size: 24px;
+	margin-right: px;
+}
+
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Facial Paralysis Data Collection</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+</nav>
+
+<div class="container-fluid" style="margin-top:30px">
+  <div class="row">
+    <div class="col-md-6 ">
+			<div id="" style="width:600px"; margin:0 auto;>
+                <h2 class="w3-opacity">Details</h2>
+			</div>
+			
+			<form>
+				<fieldset>
+				  <div class="tableContainer">
+					<div class="tableRow">
+					  <label for="task">Patient_ID </label>
+						  <input type="text" id="patient_ID" size="35" placeholder="12345">
+					</div>
+					<div class="tableRow">
+					  <label for="who">Age: </label>
+						  <input type="text" id="age" placeholder="25">
+					</div>
+					<div class="tableRow">
+					  <label for="submit"></label>
+					  <input type="button" id="submit" value="submit">
+					</div>
+				  </div>  
+				</fieldset>
+		</form>  
+		
+		<div>
+			<h3>Setup</h3>
+
+
+		  <!-- First Intro Button -->
+			<div class="Intro_1_button">
+				<label for="Introduction_1"></label>
+				<input type="button" id="start_intro_1" value="Intro_1" onclick="showDiv()">
+			<br> </br>
+			<div id="intro_question_1" style="display:none;" class="Intro_1_button" onclick="showDiv()">
+				<textarea  rows="1" cols="100" > Please tell us your name. (Answer after hearing the beep)</textarea>
+			</div>
+
+			<div id="intro_1_btn">
+				<input type="button" style="display:none;" id="stop_intro_1" value="Submit" onclick="showDiv()">
+			</div>
+			<div id="countdownintro_1" style="display:none">
+				<div class="values" onclick="showDiv()"></div>
+			</div>
+			</div>
+
+			<br> </br>
+
+			<!-- Second Intro Button -->
+			<div class="Intro_2_button">
+				<label for="Introduction_2"></label>
+				<input type="button" id="start_intro_2" value="Intro_2" onclick="showDiv_1()">
+			<br> </br>
+			<div id="intro_question_2" style="display:none;" class="Intro_2_button" onclick="showDiv_1()">
+				<textarea  rows="1" cols="100" > How is your day going today ? (Answer after hearing the beep)</textarea>
+			</div>
+
+			<div id="intro_2_btn">
+				<input type="button" style="display:none;" id="stop_intro_2" value="Submit" onclick="showDiv_1()">
+			</div>
+
+			<div id="countdownintro_2" style="display:none">
+				<div class="values" onclick="showDiv_1()"></div>
+			</div>
+			</div>
+
+
+		</div>
+		
+	
+		
+		
+
+  </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/timer.jquery/0.7.0/timer.jquery.js"></script>
+<script src="easytimer/dist/easytimer.min.js"></script>
+<script src="functions.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+
+<script>
+
+
+var timer = new easytimer.Timer();
+$('#chronoExample .startButton').click(function () {
+    timer.start({precision: 'seconds', startValues: {seconds: 0}, target: {seconds: 10}});
+});
+$('#chronoExample .pauseButton').click(function () {
+    timer.pause();
+});
+$('#chronoExample .stopButton').click(function () {
+    timer.stop();
+});
+$('#chronoExample .resetButton').click(function () {
+    timer.reset();
+});
+
+timer.addEventListener('secondsUpdated', function (e) {
+		$('#chronoExample .values').html(timer.getTimeValues().toString());
+		//$('#chronoExample .progress_bar').html($('#chronoExample .progress_bar').html() + '.');
+        //$('#chronoExample .progress_bar').h
+});
+
+timer.addEventListener('started', function (e) {
+    $('#chronoExample .values').html(timer.getTimeValues().toString());
+});
+timer.addEventListener('reset', function (e) {
+		$('#chronoExample .values').html(timer.getTimeValues().toString());
+		$('#chronoExample .progress_bar').html('.');
+});
+timer.addEventListener('targetAchieved', function () {
+    $('#chronoExample .divstyle').html('TEST INITIATING!! QUESTIONS WILL BE ADMINISTERED AFTER 5 SEC INTERVAL');
+	});
+
+timer.addEventListener('targetAchieved', function () {
+	beep_fn(100, 520, 200)});
+
+//add a 3 second interval timer here 
+//battery timer section here
+
+var battery_timer_1= new easytimer.Timer()
+timer.addEventListener('targetAchieved', function(){battery_timer_1.start({precision: 'seconds', startValues: {seconds: 0}, target: {seconds: 5}});});
+battery_timer_1.addEventListener('secondsUpdated', function (e) {
+    $('#battery_trigger_1_values .values').html(battery_timer_1.getTimeValues().toString());
+});
+battery_timer_1.addEventListener('targetAchieved', function (e) {
+    $('#battery_trigger_1_values .values').html('<b> Hello please tell me your name <b>');
+});
+
+
+
+
+
+
+</script>
