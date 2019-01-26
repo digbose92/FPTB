@@ -162,51 +162,71 @@ display:none;
 				</fieldset>
 		</form>  
 		
+
+		<br></br>
+
+
 		<div>
 			<h3>Setup</h3>
 
 
 		  <!-- First Intro Button -->
-			<div class="Intro_1_button">
+			<div class="tableContainer">
 				<label for="Introduction_1"></label>
 				<input type="button" id="start_intro_1" value="Intro_1" onclick="showDiv()">
-			<br> </br>
+			
 			<div id="intro_question_1" style="display:none;" class="Intro_1_button" onclick="showDiv()">
 				<textarea  rows="1" cols="100" > Please tell us your name. (Answer after hearing the beep)</textarea>
 			</div>
-
+			<div id="countdownintro_1" style="display:none">
+					<div class="values" onclick="showDiv()"></div>
+			</div>
 			<div id="intro_1_btn">
 				<input type="button" style="display:none;" id="stop_intro_1" value="Submit" onclick="showDiv()">
 			</div>
-			<div id="countdownintro_1" style="display:none">
-				<div class="values" onclick="showDiv()"></div>
-			</div>
+			
 			</div>
 
-			<br> </br>
+			<br></br>
 
 			<!-- Second Intro Button -->
-			<div class="Intro_2_button">
+			<div class="tableContainer">
 				<label for="Introduction_2"></label>
 				<input type="button" id="start_intro_2" value="Intro_2" onclick="showDiv_1()">
-			<br> </br>
 			<div id="intro_question_2" style="display:none;" class="Intro_2_button" onclick="showDiv_1()">
 				<textarea  rows="1" cols="100" > How is your day going today ? (Answer after hearing the beep)</textarea>
 			</div>
-
+			<div id="countdownintro_2" style="display:none">
+					<div class="values" onclick="showDiv_1()"></div>
+			</div>
 			<div id="intro_2_btn">
 				<input type="button" style="display:none;" id="stop_intro_2" value="Submit" onclick="showDiv_1()">
-			</div>
-
-			<div id="countdownintro_2" style="display:none">
-				<div class="values" onclick="showDiv_1()"></div>
 			</div>
 			</div>
 
 
 		</div>
-		
 	
+		<br></br>
+	 <div>
+		 <h3>Task sequence</h3>
+		 <div class="tableContainer">
+				<label for="Task_sample"></label>
+				<input type="button" id="start_task_1" value="Task_1" onclick="showDiv_task()">
+				<div id="task_question_1" style="display:none;" class="task_button" onclick="showDiv_task()">
+						<textarea  rows="1" cols="100" > Smile gently without showing teeth (Respond after hearing the beep and stop at the next beep)</textarea>
+				</div>
+				<div id="countdownquestion_1" style="display:none">
+						<div class="values" onclick="showDiv_task()"></div>
+				</div>
+
+				<div id="taskquestion_1">
+						<div class="values"></div>
+				</div>
+
+		 </div>
+
+	 </div>
 		
 		
 

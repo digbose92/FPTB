@@ -1,5 +1,9 @@
 var todos = new Array();
 var timer = new easytimer.Timer();
+var timer_1 = new easytimer.Timer();
+var timer_task_1 = new easytimer.Timer();
+var timer_task_1_exc = new easytimer.Timer();
+
 a=new AudioContext();
 
 window.onload = init;
@@ -99,22 +103,85 @@ function showDiv() {
     document.getElementById('countdownintro_2').style.display = "block";
     document.getElementById('stop_intro_2').style.display = "block";
  }
+ 
 
- $('#start_intro').click(function () {
+ function showDiv_task()
+ {
+    document.getElementById('task_question_1').style.display = "block";
+    document.getElementById('countdownquestion_1').style.display = "block";
+ }
+
+
+
+
+ //first counter after intro 1 
+ $('#start_intro_1').click(function () {
     timer.start({precision: 'seconds', startValues: {seconds: 0}, target: {seconds: 10}});
 });
 
- $('#countdownintro .values').html(timer.getTimeValues().toString());
+ $('#countdownintro_1 .values').html(timer.getTimeValues().toString());
 timer.addEventListener('secondsUpdated', function (e) {
-    $('#countdownintro .values').html(timer.getTimeValues().toString());
+    $('#countdownintro_1 .values').html(timer.getTimeValues().toString());
 });
 timer.addEventListener('targetAchieved', function (e) {
-    $('#countdownintro .values').html('PROCEED!!');
+    $('#countdownintro_1 .values').html('PROCEED!!');
 });
 
 timer.addEventListener('targetAchieved', function () {
     beep_fn(100, 520, 200)});
     
-$("#start_intro").click(function(){
-        $("#name_form").toggle();
+//$("#start_intro_1").click(function(){
+    //    $("#name_form").toggle();
+//});
+
+
+//second counter after intro 2 
+$('#start_intro_2').click(function () {
+    timer_1.start({precision: 'seconds', startValues: {seconds: 0}, target: {seconds: 10}});
 });
+
+ $('#countdownintro_2 .values').html(timer_1.getTimeValues().toString());
+timer_1.addEventListener('secondsUpdated', function (e) {
+    $('#countdownintro_2 .values').html(timer_1.getTimeValues().toString());
+});
+timer_1.addEventListener('targetAchieved', function (e) {
+    $('#countdownintro_2 .values').html('PROCEED!!');
+});
+
+timer_1.addEventListener('targetAchieved', function () {
+    beep_fn(100, 520, 200)});
+    
+//$("#start_intro_1").click(function(){
+        //$("#name_form").toggle();
+//})
+
+
+//counter after task 1
+$('#start_task_1').click(function () {
+    timer_task_1.start({precision: 'seconds', startValues: {seconds: 0}, target: {seconds: 5}});
+});
+
+ $('#countdownquestion_1 .values').html(timer_task_1.getTimeValues().toString());
+timer_task_1.addEventListener('secondsUpdated', function (e) {
+    $('#countdownquestion_1 .values').html(timer_task_1.getTimeValues().toString());
+});
+timer_task_1.addEventListener('targetAchieved', function (e) {
+    $('#countdownquestion_1 .values').html('PROCEED!!');
+});
+
+timer_task_1.addEventListener('targetAchieved', function () {
+    beep_fn(100, 520, 200)});
+
+
+//task counter just after timer_task is executed
+timer_task_1.addEventListener('targetAchieved', function(){timer_task_1_exc.start({precision: 'seconds', startValues: {seconds: 0}, target: {seconds: 5}});});
+timer_task_1_exc.addEventListener('secondsUpdated', function (e) {
+    $('#taskquestion_1 .values').html(timer_task_1_exc.getTimeValues().toString());
+});
+timer_task_1_exc.addEventListener('targetAchieved', function (e) {
+    $('#taskquestion_1 .values').html('Finish response to the question');
+});
+
+timer_task_1_exc.addEventListener('targetAchieved', function () {
+    beep_fn(100, 520, 200)});
+    
